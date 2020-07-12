@@ -1,0 +1,36 @@
+++ ->v0.8.9(pv8) 作業中
+* 検索の実装を助ける xoops/search.php を追加
+* TotalizePermController.php で ORIG_PATH_INFO への対応を行った
+* mojaLE を統合
+* シリアライズ処理により session_start に対してシビアではない $_SESSION ラッパーとなった exSession クラスを追加
+* exSession に対応した exOnetimeTicket クラスの追加
+* exOnetimeTicket に対応したシンプルな exConfirmTicketForm クラスの追加
+
+++ ->v0.8.8
+* exController の追加開始
+* exForwardConfig に スルー定義を追加。コンポーネント側で処理を終えず、コントローラに戻すことを希望する特殊な処理。
+* EXFORWARD_THROW 処理、 InputComponent の標準 Processor で保証
+* XMLHandler に ノードのエレメントクラス XMLNodeElement 追加。レンダリングにも対応。
+* exPerm に、一度調べた権限のキャッシュ追加
+* メッセージの追加
+* exXoopsObject は setVar 時に striptagsGPC 相当の処理がデフォルトで入るように変更(thanks for ryuji)
+
+++ ->v0.8.7(pv7)
+* Smarty キャッシュを手軽に制御するためのクラスメソッド群の追加開始
+* ListTable コンポーネント用テーブルモデルの実装を助ける exTypicalListTableModel を試験的に追加
+* ListController に filter の set/get 追加
+* DB 型 Smarty とスムーズにやりとりを行うため、ListController に getArray() getStructure() を追加
+* パーミッションを簡単に取り扱うための xoops/perm.php ほか Input Confirm Processor など追加
+* ハンドラだけで ListTable を作成できる GenericListTableModel.php 追加
+* ファイルの場所が移動 exComponent/render/ConfirmModelRender.php -> exComponent/confirm/render/ConfirmModelRender.php
+
+++ ->v0.8.6(pv6)
+* Session に pop および postPop メソッドを追加
+* ActionForm を対象にした典型的処理で Bean とつけられていた言葉を Form に変更
+* コンファームに対する Typical なコンポーネント群を追加 DeleteConfirm はバージョン互換のため維持するが、削除の方向へ
+* バージョンチェックのための version.php を追加
+* EXFRAME_SALT 値の導入
+
+++ v0.8.3 -> v0.8.4
+* PHP バージョンによっては空オブジェクトを偽判定で true にしてしまう動作をすることがあるため、判定を厳密にした。
+* リストコントローラの rendernabi オフセットを標準で 5 に設定した
